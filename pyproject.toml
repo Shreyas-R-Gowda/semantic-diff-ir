@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "semantic-diff-ir"
+version = "0.1.0"
+description = "Semantic diff for compiler IR with LLVM IR normalization, CFG/DFG diffing, and optimization change classification."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "networkx>=3.0",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8.0",
+]
+web = [
+  "fastapi>=0.115",
+  "pydantic>=2.0",
+  "uvicorn[standard]>=0.30",
+]
+
+[project.scripts]
+semantic-diff = "semantic_diff.cli:main"
+semantic-diff-eval = "semantic_diff.eval.cli:main"
+semantic-diff-web = "semantic_diff.web.api:main"
+
+[tool.setuptools]
+package-dir = {"semantic_diff" = "."}
+packages = [
+  "semantic_diff",
+  "semantic_diff.classify",
+  "semantic_diff.compiler",
+  "semantic_diff.diff",
+  "semantic_diff.eval",
+  "semantic_diff.graphs",
+  "semantic_diff.parser",
+  "semantic_diff.report",
+  "semantic_diff.web",
+]

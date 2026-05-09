@@ -1,0 +1,16 @@
+.DS_Store
+.claude/settings.local.json
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+*.egg-info/
+texput.log
+
+frontend/node_modules/
+frontend/dist/
+frontend/*.tsbuildinfo
+
+examples/real_commits/*.ll
+examples/real_commits/*_output.json
+examples/real_commits/case*_cfg/
