@@ -11,6 +11,30 @@ The React frontend provides a side-by-side LLVM IR diff viewer, semantic change
 summary, performance impact score, CFG visualization, benchmark runner, and PDF
 export.
 
+## Project Flow
+
+```text
+Old/New Code -> LLVM IR -> Normalize -> Parse -> Structural Diff
+             -> Classify Semantic Changes -> Generate Report -> Web UI
+```
+
+1. **Input Layer:** Accept old and new C/C++ source files or precompiled LLVM IR
+   `.ll` files.
+2. **Compiler Extractor:** Use `clang -S -emit-llvm` and optional
+   `mem2reg`/`sroa` passes to produce LLVM IR from source inputs.
+3. **IR Normalizer:** Remove metadata noise, canonicalize temporary names,
+   normalize pointer syntax, and stabilize commutative operations.
+4. **IR Parser:** Parse functions, basic blocks, and instructions; build CFG and
+   simple DFG representations; detect loops and vector types.
+5. **Structural Diff Engine:** Match old and new functions and basic blocks,
+   calculate similarity scores, and identify instruction-level changes.
+6. **Change Classifiers:** Interpret differences as optimization, control-flow,
+   and memory behavior changes.
+7. **Semantic Diff Report:** Render human-readable text, structured JSON, DOT
+   CFG graphs, and the web UI performance impact score.
+8. **Web Application:** Use FastAPI and React to present the side-by-side diff,
+   interactive CFG visualization, benchmark results, and PDF export.
+
 ## What It Does
 
 - Normalizes LLVM IR by stripping debug/module noise, canonicalizing temporary
