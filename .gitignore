@@ -12,6 +12,5 @@ frontend/node_modules/
 frontend/dist/
 frontend/*.tsbuildinfo
 
-examples/real_commits/*.ll
 examples/real_commits/*_output.json
 examples/real_commits/case*_cfg/

@@ -3,7 +3,9 @@
 
 ---
 
-**Student:** Shreyasr
+**Student:** <FULL_NAME>
+**Institution:** RVCE
+**Roll No.:** <ROLL_NO>
 **Date:** May 31, 2026
 **Project:** Semantic Diff for Compiler IR
 **Partner:** HP Inc.

@@ -3,6 +3,19 @@
 Semantic Diff compares two C/C++ source revisions, or two precompiled LLVM IR
 files, and reports IR-level semantic changes rather than textual edits.
 
+## Submission Status
+
+| Item | Deliverable | Status |
+| --- | --- | --- |
+| D1 | IR normalization pipeline | ✅ Complete |
+| D2 | Structural CFG/DFG parsing and diff engine | ✅ Complete |
+| D3 | Semantic change classification | ✅ Complete |
+| D4 | CLI and human-readable reports | ✅ Complete |
+| D5 | Offline benchmark, real-commit evaluator, and evaluation documentation | ✅ Complete |
+| Bonus | FastAPI + React web UI, CFG visualization, PDF export, tests, CLI flags | ✅ Complete |
+
+For a grader-friendly run that does not require LLVM, see [DEMO.md](DEMO.md).
+
 ## Web UI Preview
 
 ![Semantic Diff Workbench frontend](docs/images/semantic-diff-workbench.png)
