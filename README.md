@@ -18,6 +18,8 @@ Old/New Code -> LLVM IR -> Normalize -> Parse -> Structural Diff
              -> Classify Semantic Changes -> Generate Report -> Web UI
 ```
 
+![Semantic Diff for Compiler IR architecture](docs/images/semantic-diff-architecture.png)
+
 1. **Input Layer:** Accept old and new C/C++ source files or precompiled LLVM IR
    `.ll` files.
 2. **Compiler Extractor:** Use `clang -S -emit-llvm` and optional
