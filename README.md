@@ -3,6 +3,14 @@
 Semantic Diff compares two C/C++ source revisions, or two precompiled LLVM IR
 files, and reports IR-level semantic changes rather than textual edits.
 
+## Web UI Preview
+
+![Semantic Diff Workbench frontend](docs/images/semantic-diff-workbench.png)
+
+The React frontend provides a side-by-side LLVM IR diff viewer, semantic change
+summary, performance impact score, CFG visualization, benchmark runner, and PDF
+export.
+
 ## What It Does
 
 - Normalizes LLVM IR by stripping debug/module noise, canonicalizing temporary
