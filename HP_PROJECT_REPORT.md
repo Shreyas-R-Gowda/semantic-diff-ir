@@ -36,7 +36,7 @@ Unlike a plain `diff`, the tool answers the question: *"What did the compiler ac
 - Benchmark evaluation: **10/10 cases passed, F1 = 100%**
 - Unit test suite: **54 tests, all passing**
 - Source-pair demo: **7 realistic LLVM/application optimization scenarios**
-- Deliverables: **core pipeline complete; publication-grade real-commit evaluation remains future work**
+- Deliverables: **core pipeline and real-commit evaluator complete; publication-grade dataset execution remains future work**
 
 ---
 
@@ -539,7 +539,7 @@ Render with: `dot -Tpng scale.dot -o scale.png`
 | **D2** | IR Parsing — functions, blocks, instructions, CFG, DFG, loop detection, vector type extraction | ✅ Complete |
 | **D3** | Diff Engine — 4-stage function matcher, 2-stage block matcher, similarity scoring, ModuleDiff structure | ✅ Complete |
 | **D4** | Change Classification — 24 ChangeKind values across OptClassifier, CFClassifier, MemClassifier | ✅ Complete |
-| **D5** | Evaluation — 10-case offline benchmark suite, Precision/Recall/F1 metrics, and 7 realistic source-pair demos. Exact commit-hash extraction is still needed for publication-grade validation. | ⚠ Offline suite complete |
+| **D5** | Evaluation — 10-case offline benchmark suite, Precision/Recall/F1 metrics, 7 realistic source-pair demos, and `eval/real_commit_eval.py` for exact local commit-hash extraction and validation. | ✅ Complete |
 | **Bonus** | Web UI with CFG visualizer, IR diff viewer, PDF export, Performance Score, HP branding | ✅ Complete |
 | **Bonus** | Full unit test suite (54 tests) | ✅ Complete |
 | **Bonus** | CLI flags: `--std`, `--output`, `--dot`, `--show-unchanged`, `--no-mem2reg` | ✅ Complete |
@@ -552,7 +552,7 @@ This project implements a complete **semantic differencing pipeline for LLVM IR*
 
 The web interface makes the tool accessible without command-line expertise, providing interactive CFG visualization, side-by-side IR diffing, and a one-click PDF export suitable for sharing with a compiler team.
 
-**The tool is a working prototype for compiler pass development workflows** — developers can paste IR before and after applying a pass, see which optimizations fired and which regressions to investigate, and export a branded PDF report for team review. A publication-grade evaluation should add IR extracted from exact real commit hashes and compare findings against commit descriptions manually.
+**The tool is a working prototype for compiler pass development workflows** — developers can paste IR before and after applying a pass, see which optimizations fired and which regressions to investigate, and export a branded PDF report for team review. The included real-commit evaluator automates IR extraction from exact local commit hashes; a publication-grade study should run it against a curated real-commit dataset and compare findings against commit descriptions manually.
 
 ---
 

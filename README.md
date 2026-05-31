@@ -141,6 +141,23 @@ The offline benchmark is suitable for regression testing and grading purposes.
 Replace or extend the IR fixtures in `eval/benchmark.py` with real extracted IR
 to upgrade to a publication-grade evaluation suite.
 
+### Real-Commit Evaluation
+
+Use `eval/real_commit_eval.py` to compile and compare exact commits from local
+git checkouts. Copy the commented examples in `eval/real_commits_sample.yaml`,
+then provide the repository path, source file, commit hashes, and expected
+`ChangeKind` values for each case:
+
+```bash
+python3 -m semantic_diff.eval.real_commit_eval \
+  --config eval/real_commits_sample.yaml
+```
+
+The evaluator checks out each revision, compiles the selected file with
+`clang -O2 -S -emit-llvm`, restores the repository's original checkout, and
+prints per-case Precision, Recall, and F1 metrics. It refuses to run against a
+dirty repository to avoid overwriting local work.
+
 ## Web UI
 
 The web app uses FastAPI for the Python backend and Vite + React for the

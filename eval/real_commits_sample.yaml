@@ -1,0 +1,26 @@
+entries: []
+
+# Copy one or more examples below into the entries list, then replace the
+# placeholder paths and commit hashes with values from local git repositories.
+#
+# entries:
+#   - id: llvm-loop-vectorize-example
+#     repo: /path/to/local/llvm-project
+#     file: clang/test/CodeGen/example.c
+#     old_commit: abc1234
+#     new_commit: def5678
+#     expected_changes: [VECTORIZE_GAINED, LOOP_UNROLL_GAINED]
+#
+#   - id: sqlite-load-count-example
+#     repo: /path/to/local/sqlite
+#     file: src/example.c
+#     old_commit: 1111111
+#     new_commit: 2222222
+#     expected_changes: [LOAD_COUNT_CHANGED, INSTR_COUNT_UP]
+#
+#   - id: openssl-critical-path-example
+#     repo: /path/to/local/openssl
+#     file: crypto/example.c
+#     old_commit: 3333333
+#     new_commit: 4444444
+#     expected_changes: [CRITICAL_PATH_LONGER, INSTR_COUNT_UP]
