@@ -5,6 +5,7 @@ __pycache__/
 .pytest_cache/
 .venv/
 *.egg-info/
+build/
 texput.log
 
 frontend/node_modules/
